@@ -41,6 +41,10 @@ const CreatePost = () => {
 
     const createNewPost = async (e) => {
         e.preventDefault();
+
+        if(!title || !summary || !content){
+            return
+        }
         const data = new FormData();
         data.set("title", title);
         data.set("summary", summary);
